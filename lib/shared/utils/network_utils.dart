@@ -4,8 +4,9 @@ import 'package:change_house_colors/constants/network_constants.dart';
 import 'package:dio/dio.dart';
 
 class NetworkUtils {
+  // Timeout 15 seconds
   static final Dio _dio = Dio(BaseOptions(
-      baseUrl: networkHost, receiveTimeout: const Duration(seconds: 5)));
+      baseUrl: networkHost, receiveTimeout: const Duration(seconds: 15)));
 
   static get(String path) async {
     final response = await _dio.get(path);
